@@ -8,3 +8,7 @@ services:
     stop_signal: SIGINT
     ports:
       - '8000:8000'
+    x-develop:
+      watch:
+        - action: rebuild
+          path: ./backend
