@@ -1,7 +1,7 @@
 services:
-  backend: 
+  backend-flask: 
     build:
-      context: backend
+      context: backend-flask
       target: development
     # flask requires SIGINT to stop gracefully
     # (default stop signal from Compose is SIGTERM)
@@ -11,4 +11,15 @@ services:
     x-develop:
       watch:
         - action: rebuild
-          path: ./backend
+          path: ./backend-flask
+
+  backend-django:
+    build:
+      context: backend-django
+      target: development
+    ports:
+      - '8080:8080'
+    x-develop:
+      watch:
+        - action: rebuild
+          path: ./backend-django

@@ -1,9 +1,9 @@
 services:
   backend:
     build:
-      context: ../backend
+      context: ../backend-flask
       target: dev-envs
     stop_signal: SIGINT
     ports: 
       - '8000:8000'
-    volumes: ['./backend:/app']
+    volumes: ['./backend-flask:/app']
