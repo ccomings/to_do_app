@@ -18,7 +18,7 @@ services:
       context: backend-django
       target: development
     ports:
-      - '8080:8080'
+      - '8000:8000'
     x-develop:
       watch:
         - action: rebuild
