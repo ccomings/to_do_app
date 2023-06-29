@@ -12,6 +12,12 @@ services:
       watch:
         - action: rebuild
           path: ./backend-flask
+    environment:
+    # change set these in deployment
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+    depends_on:
+      - db
 
   backend-django:
     build:
