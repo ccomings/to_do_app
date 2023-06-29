@@ -1,0 +1,9 @@
+{% if todos_list %}
+    <ul>
+    {% for todo in todos_list %}
+        <li><a href="/todos/{{ todo.id }}/">{{ todo.text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No todos are available.</p>
+{% endif %}

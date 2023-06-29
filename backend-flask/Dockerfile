@@ -3,12 +3,12 @@ FROM python:3.10-alpine AS development
 
 EXPOSE 8000
 
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR app
 
 COPY * /app/
 
-# RUN apk update
-# RUN apk add postgresql-dev gcc python3-dev musl-dev
 RUN pip3 install -r requirements.txt
 
 ENTRYPOINT ["python3"]
