@@ -16,6 +16,7 @@ services:
     # change set these in deployment
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
 
@@ -33,6 +34,7 @@ services:
     # change set these in deployment
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
 
@@ -44,3 +46,4 @@ services:
       # change set these in deployment
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
