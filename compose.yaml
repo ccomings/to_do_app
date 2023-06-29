@@ -23,3 +23,18 @@ services:
       watch:
         - action: rebuild
           path: ./backend-django
+    environment:
+    # change set these in deployment
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      # change set these in deployment
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
